@@ -1,0 +1,17 @@
+{% layout none %}
+{
+  "items": [
+    {% for item in search.results %}
+    {% if item.object_type == 'product' %}
+    {
+      "title": "{{ item.title }}",
+      "price": "{{ item.price | money }}",
+      "image": "{{ item.featured_image | img_url: '512x' }}",
+      "variantId": "{{ item.selected_or_first_available_variant.id }}",
+      "url": "{{ item.url }}"
+    }
+    {% break %}
+    {% endif %}
+    {% endfor %}
+  ]
+}

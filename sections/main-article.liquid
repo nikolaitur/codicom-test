@@ -1,4 +1,7 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'selling-plans.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'main-article.js' | asset_url }}" defer="defer"></script>
 
 <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
   {%- for block in section.blocks -%}
@@ -60,7 +63,7 @@
           itemprop="articleBody"
           {{ block.shopify_attributes }}
         >
-          {{ article.content }}
+          {{ article.content | replace: '[product=', '<div class="product-item__in-article" data-product-sku=' | replace: '/]', '></div>'  }}
         </div>
 
       {%- when 'share' -%}

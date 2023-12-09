@@ -173,3 +173,27 @@
 .article-template__back:last-child {
   margin-bottom: 3.2rem;
 }
+
+.product-item__in-article {
+  display: block;
+  margin: 10px auto;
+  max-width: 300px;
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.product-item__in-article .btn-quick-add {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #fff !important;
+  background-color: #323232 !important;
+  padding: 8px 11px;
+  border-radius: 2px;
+  margin: 0;
+  cursor: pointer;
+}
