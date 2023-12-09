@@ -363,10 +363,12 @@
           {%- for item in cart.items -%}
             {% assign cart_item_handles = cart_item_handles | append: item.product.handle | append: ',' %}
           {%- endfor -%}
+          {% assign upsell_items_count = 0 %}
           {%- for item in cart.items -%}
             {% if item.product.metafields.custom.upsell_items %}
               {% for upsell_item in item.product.metafields.custom.upsell_items.value %}
                 {% unless cart_item_handles contains upsell_item.handle %}
+                  {% assign upsell_items_count = upsell_items_count | plus: 1 %}
                   <div class="drawer_upsell-item">
                     <a href="{{ upsell_item.url }}" class="drawer_upsell-item-image">
                       <img src="{{ upsell_item.featured_image | img_url: '200x' }}" alt="{{ upsell_item.featured_image.alt }}"/>
@@ -397,6 +399,24 @@
           {%- endfor -%}
         </div>
       </div>
+      {% if upsell_items_count == 0 %}
+      <style>
+        .drawer__upsell {
+          display: none;
+        }
+      </style>
+      {% elsif upsell_items_count == 1 %}
+      <style>
+        .drawer_upsell-items {
+          margin-right: 0;
+          overflow: hidden;
+        }
+        .drawer_upsell-item {
+          width: 100%;
+          min-width: 100%;
+        }
+      </style>
+      {% endif %}
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">

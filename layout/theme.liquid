@@ -299,6 +299,9 @@
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
       };
     </script>
+    <script src="{{ 'product-form.js' | asset_url }}" defer="defer" type="module"></script>
+
+    <script src="{{ 'selling-plans.js' | asset_url }}" defer="defer"></script>
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
