@@ -4,8 +4,8 @@
     "theme_name": "Generated Data Theme",
     "theme_version": "1.0.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/shopify.dev\/docs\/apps\/tools\/development-stores\/generated-data#themes\/",
-    "theme_support_url": "https:\/\/shopify.dev\/docs\/apps\/tools\/development-stores\/generated-data#themes\/"
+    "theme_documentation_url": "https://shopify.dev/docs/apps/tools/development-stores/generated-data#themes/",
+    "theme_support_url": "https://shopify.dev/docs/apps/tools/development-stores/generated-data#themes/"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -1555,6 +1555,21 @@
         "id": "cart_drawer_collection",
         "label": "t:settings_schema.cart.settings.cart_drawer.collection.label",
         "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
+      },
+      {
+        "type": "header",
+        "content": "Welcome Message"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_welcome",
+        "label": "Enable Welcome Message",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "cart_welcome_msg",
+        "label": "Welcome Message"
       }
     ]
   }

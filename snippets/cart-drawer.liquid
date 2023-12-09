@@ -66,6 +66,12 @@
           {% render 'icon-close' %}
         </button>
       </div>
+      {% if settings.enable_welcome and cart != empty %}
+        <div class="drawer__welcome">
+          {% render 'icon-checkbox' %}
+          <span>{{ settings.cart_welcome_msg }}</span>
+        </div>
+      {% endif %}
       <cart-drawer-items
         {% if cart == empty %}
           class=" is-empty"
